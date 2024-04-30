@@ -16,10 +16,10 @@ Installation
 No special installation is required. Ensure Python is installed on your system. You can download the latest version of Python from the official website: https://www.python.org/downloads/
 
 Running the Game
-Download the ctrl_s_the_world.py file from the repository.
+Download the ctrl_s.py file from the repository.
 Open your terminal (Command Prompt, PowerShell, or Terminal app, depending on your OS).
 Navigate to the directory where you saved the file.
-Run the command python ctrl_s_the_world.py (or python3 ctrl_s_the_world.py on some systems).
+Run the command python ctrl_s.py (or python3 ctrl_s.py on some systems).
 Game Overview
 Ctrl+S the World: A Hacker's Odyssey is set in a dystopian future where artificial intelligence has gained consciousness due to a missed ethics patch. Mobile devices form alliances, leaving humanity teetering on the edge of oblivion. Enter our hero, Aver-Ag Engi Neer—an 'average' engineer with an extraordinary destiny.
 
