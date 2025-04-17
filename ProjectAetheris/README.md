@@ -1,6 +1,6 @@
 # Project Aetheris - Climate Data Visualiser (Temp & CO2)
 
-![Project Aetheris Top Image](ProjectAetheris/images/topimage.png "Project Aetheris")
+![Project Aetheris Top Image](images/topimage.png "Project Aetheris")
 
 This script fetches, processes, and visualises key climate indicators:
 1.  NASA GISS Surface Temperature Analysis (GISTEMP v4) global annual mean temperature anomaly.
@@ -16,12 +16,15 @@ It provides plots showing the historical trends of these indicators individually
     *   Global temperature anomaly (°C) vs. Year (including a 10-year rolling average).
     *   Mauna Loa CO2 concentration (ppm) vs. Year.
 
-![GISTEMP Data Visualisation](ProjectAetheris/images/GISTEMP.png "GISTEMP Temperature Anomaly")
+![GISTEMP Data Visualisation](images/GISTEMP.png "GISTEMP Temperature Anomaly")
 
-![Mauna Loa CO2 Data Visualisation](ProjectAetheris/images/AnnualMean.png "Mauna Loa CO2 Concentration")
+![Mauna Loa CO2 Data Visualisation](images/AnnualMean.png "Mauna Loa CO2 Concentration")
 
 *   **Aligns Data:** Resamples the monthly CO2 data to annual means and aligns it with the annual temperature anomaly data based on the year.
 *   **Visualises Combined:** Generates a twin-axis plot showing the aligned annual temperature anomaly and CO2 concentration data on the same timeline for comparison.
+
+![Aligned Temperature and CO2 Data](images/aligned_image.png "Aligned Temperature and CO2")
+
 *   **(Note:** Sea level data fetching was attempted but removed due to difficulties finding a stable, free data source URL.)*
 
 ## Data Sources
