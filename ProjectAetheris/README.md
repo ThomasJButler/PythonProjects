@@ -18,11 +18,10 @@ It provides plots showing the historical trends of these indicators individually
 
 ![GISTEMP Data Visualisation](ProjectAetheris/images/GISTEMP.png "GISTEMP Temperature Anomaly")
 
+![Mauna Loa CO2 Data Visualisation](ProjectAetheris/images/AnnualMean.png "Mauna Loa CO2 Concentration")
+
 *   **Aligns Data:** Resamples the monthly CO2 data to annual means and aligns it with the annual temperature anomaly data based on the year.
 *   **Visualises Combined:** Generates a twin-axis plot showing the aligned annual temperature anomaly and CO2 concentration data on the same timeline for comparison.
-
-![Aligned Temperature and CO2 Data](ProjectAetheris/images/AnnualMean.png "Aligned Temperature and CO2")
-
 *   **(Note:** Sea level data fetching was attempted but removed due to difficulties finding a stable, free data source URL.)*
 
 ## Data Sources
