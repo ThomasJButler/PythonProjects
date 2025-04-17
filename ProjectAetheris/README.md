@@ -1,6 +1,6 @@
 # Project Aetheris - Climate Data Visualiser (Temp & CO2)
 
-![Project Aetheris Top Image](path/to/top_image.png "Project Aetheris")
+![Project Aetheris Top Image](ProjectAetheris/images/topimage.png "Project Aetheris")
 
 This script fetches, processes, and visualises key climate indicators:
 1.  NASA GISS Surface Temperature Analysis (GISTEMP v4) global annual mean temperature anomaly.
@@ -16,14 +16,12 @@ It provides plots showing the historical trends of these indicators individually
     *   Global temperature anomaly (°C) vs. Year (including a 10-year rolling average).
     *   Mauna Loa CO2 concentration (ppm) vs. Year.
 
-![GISTEMP Data Visualisation](path/to/gistemp_image.png "GISTEMP Temperature Anomaly")
-
-![Mauna Loa CO2 Data Visualisation](path/to/co2_image.png "Mauna Loa CO2 Concentration")
+![GISTEMP Data Visualisation](ProjectAetheris/images/GISTEMP.png "GISTEMP Temperature Anomaly")
 
 *   **Aligns Data:** Resamples the monthly CO2 data to annual means and aligns it with the annual temperature anomaly data based on the year.
 *   **Visualises Combined:** Generates a twin-axis plot showing the aligned annual temperature anomaly and CO2 concentration data on the same timeline for comparison.
 
-![Aligned Temperature and CO2 Data](path/to/aligned_image.png "Aligned Temperature and CO2")
+![Aligned Temperature and CO2 Data](ProjectAetheris/images/AnnualMean.png "Aligned Temperature and CO2")
 
 *   **(Note:** Sea level data fetching was attempted but removed due to difficulties finding a stable, free data source URL.)*
 
@@ -79,3 +77,32 @@ This project uses Python and requires a few common data science libraries. It's 
 *   pandas
 *   requests
 *   matplotlib
+
+## Bonus: Visualising Deterministic Chaos with the Lorenz Attractor
+
+In the `ProjectAetheris/lorenz/` directory, you'll find `lorenz_chaos.py`, a script that demonstrates a fundamental concept in chaos theory using the Lorenz system.
+
+### What it Does
+
+*   **Simulates the Lorenz System:** Numerically solves the three differential equations that define the Lorenz system.
+*   **Visualises the Attractor:** Generates a 3D plot showcasing the iconic "butterfly" shaped Lorenz attractor.
+
+### Why it's Useful
+
+*   **Illustrates Chaos Theory:** Provides a visual representation of how simple, deterministic rules can lead to complex, unpredictable behaviour.
+*   **Demonstrates the Butterfly Effect:** Highlights the sensitivity to initial conditions, where tiny changes can drastically alter the system's trajectory.
+*   **Educational Tool:** Offers an accessible way to understand a concept that revolutionized fields like meteorology, physics, and economics.
+
+### Setup and Usage
+
+1.  **Ensure Dependencies are Installed:** The `numpy` and `matplotlib` libraries are required. If you've followed the setup for Project Aetheris, these are already installed in your `aetheris` environment. Otherwise, create a new environment or install them in your existing environment.
+2.  **Navigate to the `lorenz/` Directory:**
+    ```bash
+    cd ProjectAetheris/lorenz
+    ```
+3.  **Run the Script:**
+    Execute the script:
+    ```bash
+    python lorenz_chaos.py
+    ```
+    The script will simulate the Lorenz system and display the 3D plot. Close the plot window to exit.
