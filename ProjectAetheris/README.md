@@ -1,6 +1,6 @@
 # Project Aetheris - Climate Data Visualiser (Temp & CO2)
 
-![Project Aetheris Top Image](PythonProjects/ProjectAetheris/images/topimage.png "Project Aetheris")
+![Project Aetheris Top Image](ProjectAetheris/images/topimage.png "Project Aetheris")
 
 This script fetches, processes, and visualises key climate indicators:
 1.  NASA GISS Surface Temperature Analysis (GISTEMP v4) global annual mean temperature anomaly.
