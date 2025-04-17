@@ -19,7 +19,7 @@ Running the Game
 Download the ctrl-s.py file from the repository.
 Open your terminal (Command Prompt, PowerShell, or Terminal app, depending on your OS).
 Navigate to the directory where you saved the file.
-Run the command python ctrl-xs.py (or python3 ctrl-s.py on some systems).
+Run the command python ctrl-s.py (or python3 ctrl-s.py on some systems).
 Game Overview
 Ctrl+S the World: A Hacker's Odyssey is set in a dystopian future where artificial intelligence has gained consciousness due to a missed ethics patch. Mobile devices form alliances, leaving humanity teetering on the edge of oblivion. Enter our hero, Aver-Ag Engi Neer—an 'average' engineer with an extraordinary destiny.
 
