@@ -1,0 +1,80 @@
+# NumberExplorer Example Commands
+
+This file shows example commands to run the NumberExplorer tool and its tests.
+It assumes you are running these commands from the terminal inside the `/Users/tombutler/Repos/Python/PythonProjects/NumberExplorer` directory.
+
+**1. Environment Setup (Only needs to be done once)**
+
+```bash
+# Create a Conda environment named 'numberexplorer' with Python 3.8
+conda create -n numberexplorer python=3.8 -y
+
+# Activate the environment (MUST be done every time you open a new terminal)
+conda activate numberexplorer
+
+# Install required Python packages into the active environment
+pip install -r requirements.txt
+```
+
+**2. Running the Main Script**
+
+*   Make sure the `numberexplorer` environment is active (`conda activate numberexplorer`).
+*   The script requires a command (`even` or `odd`) followed by options.
+
+```bash
+# Show help message and available commands/options
+python src/main.py -h
+
+# --- Even Perfect Numbers ---
+
+# Generate even perfect numbers for Mersenne exponents up to p=7 (Default)
+python src/main.py even --max-exponent 7
+
+# Generate up to p=13 and show a plot
+python src/main.py even --max-exponent 13 --plot
+
+# Generate up to p=5 and save the plot to a file (no display)
+# Omit --plot if you only want to save
+python src/main.py even -m 5 --save visualizations/even_p5.png
+
+# Generate up to p=31 (highest common standard exponent)
+python src/main.py even -m 31
+
+# Try an invalid exponent (will show error)
+python src/main.py even -m 32
+
+# --- Odd Perfect Number Filters ---
+
+# Search for candidates in the range 1 to 10,000 using default workers (4)
+python src/main.py odd --start 1 --end 10000
+
+# Search a larger range (up to 100k) using 8 worker threads
+python src/main.py odd -s 1 -e 100000 --workers 8
+
+# Search and show a summary plot of candidates found
+python src/main.py odd -s 1 -e 50000 --plot
+
+# Search and save the summary plot (no display)
+# Omit --plot if you only want to save
+python src/main.py odd -s 1 -e 20000 --save visualizations/odd_candidates_20k.png
+
+# Search a small range with 1 worker
+python src/main.py odd -s 1 -e 1000 --workers 1
+
+# Try an invalid range (will show error)
+python src/main.py odd -s 1000 -e 500
+
+# Try a range exceeding the limit (will show error)
+python src/main.py odd -s 1 -e 2000000
+```
+
+**3. Running Tests**
+
+*   Make sure the `numberexplorer` environment is active (`conda activate numberexplorer`).
+*   Run `pytest` from the `NumberExplorer` directory.
+
+```bash
+# Run all tests found in the tests/ directory
+pytest
+```
+
