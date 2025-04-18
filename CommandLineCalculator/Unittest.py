@@ -1,57 +1,57 @@
 import unittest
-from unittest.mock import patch
-from calc123 import run_calculator
+from calc123 import add, subtract, multiply, divide, calculate, parse_input, validate_operator, parse_complex_expression
 
-class TestCalculatorCLI(unittest.TestCase):
-
-    @patch('builtins.input', side_effect=['2 + 2', 'no'])
-    def test_addition(self, mock_input):
-        with patch('builtins.print') as mock_print:
-            run_calculator(input)
-            mock_print.assert_any_call("Result: 4.0")
-
-    @patch('builtins.input', side_effect=['5 - 3', 'no'])
-    def test_subtraction(self, mock_input):
-        with patch('builtins.print') as mock_print:
-            run_calculator(input)
-            mock_print.assert_any_call("Result: 2.0")
-
-    @patch('builtins.input', side_effect=['2 * 3', 'no'])
-    def test_multiplication(self, mock_input):
-        with patch('builtins.print') as mock_print:
-            run_calculator(input)
-            mock_print.assert_any_call("Result: 6.0")
-
-    @patch('builtins.input', side_effect=['6 / 3', 'no'])
-    def test_division(self, mock_input):
-        with patch('builtins.print') as mock_print:
-            run_calculator(input)
-            mock_print.assert_any_call("Result: 2.0")
-
-    @patch('builtins.input', side_effect=['6 / 0', 'no'])
-    def test_division_by_zero(self, mock_input):
-        with patch('builtins.print') as mock_print:
-            try:
-                run_calculator(input)
-                mock_print.assert_any_call("Error: Division by zero is not allowed.")
-            except AssertionError:
-                print("Captured print calls:")
-                for call in mock_print.mock_calls:
-                    print(call)
-                raise
-
-    @patch('builtins.input', side_effect=['invalid input', 'no'])
-    def test_invalid_input_format(self, mock_input):
-        with patch('builtins.print') as mock_print:
-            run_calculator(input)
-            mock_print.assert_any_call("Error: Invalid input format. Please ensure that both operands are numbers and use the format: [number1] [operator] [number2]")
-
-    @patch('builtins.input', side_effect=['2 + 2', 'yes', '5 * 3', 'no'])
-    def test_continuous_operations(self, mock_input):
-        with patch('builtins.print') as mock_print:
-            run_calculator(input)
-            mock_print.assert_any_call("Result: 4.0")
-            mock_print.assert_any_call("Result: 15.0")
+class TestCalculatorFunctions(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(-1, 5), 4)
+        self.assertEqual(add(0, 0), 0)
+        
+    def test_subtract(self):
+        self.assertEqual(subtract(5, 3), 2)
+        self.assertEqual(subtract(-1, 5), -6)
+        self.assertEqual(subtract(0, 0), 0)
+        
+    def test_multiply(self):
+        self.assertEqual(multiply(2, 3), 6)
+        self.assertEqual(multiply(-1, 5), -5)
+        self.assertEqual(multiply(0, 100), 0)
+        
+    def test_divide(self):
+        self.assertEqual(divide(6, 3), 2)
+        self.assertEqual(divide(-10, 5), -2)
+        self.assertEqual(divide(0, 1), 0)
+        self.assertEqual(divide(1, 0), "Error: Division by zero is not allowed.")
+        
+    def test_validate_operator(self):
+        self.assertTrue(validate_operator('+'))
+        self.assertTrue(validate_operator('-'))
+        self.assertTrue(validate_operator('*'))
+        self.assertTrue(validate_operator('/'))
+        self.assertFalse(validate_operator('%'))
+        self.assertFalse(validate_operator('x'))
+        
+    def test_parse_input(self):
+        self.assertEqual(parse_input("5 + 3"), (5, '+', 3))
+        self.assertEqual(parse_input("-1 * 5"), (-1, '*', 5))
+        self.assertEqual(parse_input("10/2"), (None, None, None))  # This format isn't supported by parse_input
+        # Test invalid input
+        self.assertEqual(parse_input("abc"), (None, None, None))
+        
+    def test_calculate(self):
+        self.assertEqual(calculate(5, '+', 3), 8)
+        self.assertEqual(calculate(5, '-', 3), 2)
+        self.assertEqual(calculate(5, '*', 3), 15)
+        self.assertEqual(calculate(10, '/', 2), 5)
+        self.assertEqual(calculate(1, '/', 0), "Error: Division by zero is not allowed.")
+        self.assertEqual(calculate(1, '%', 2), "Error: Invalid operator. Please use one of the following operators: +, -, *, /")
+        
+    def test_parse_complex_expression(self):
+        self.assertEqual(parse_complex_expression("2+3"), 5)
+        self.assertEqual(parse_complex_expression("2+3*4"), 14)  # Tests operator precedence
+        self.assertEqual(parse_complex_expression("(2+3)*4"), 20)  # Tests parentheses
+        self.assertEqual(parse_complex_expression("10/2"), 5)
+        self.assertEqual(parse_complex_expression("10/0"), "Error: Division by zero is not allowed.")
 
 if __name__ == "__main__":
     unittest.main()
