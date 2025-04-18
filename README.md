@@ -8,10 +8,9 @@ Here's a brief overview of each project:
 *   **CtrlS:** A text based story adventure, offering an interactive narrative experience within the terminal. It combines humour and coding challenges in a unique gaming format.
 *   **DevelopersOracle:** An ambitious AI powered developer assistant (currently under development), aiming to automate and streamline various software development tasks through intelligent code analysis, task planning, and communication assistance.
 *   **Fibonacci:** Generates and visualises Fibonacci sequences, demonstrating a fundamental mathematical concept with both text based and graphical outputs. It's useful for exploring number patterns and visualising mathematical relationships.
-*   **OddPerfectNumberExplorer:** Explores potential odd perfect numbers, implementing checks for necessary (but not sufficient) conditions based on number theory. It provides insights into an unsolved problem in mathematics.
+*   **NumberExplorer:** Unified tool for exploring even perfect numbers (via Euclid–Euler theorem) and preliminary filtering of odd perfect number candidates.
 *   **Omni:** A container directory for related projects:
     *   **OmniMarket Seer (v1 & v2):** Attempts stock market prediction and sentiment analysis, exploring the use of data science techniques for financial forecasting.
     *   **OmniTechHarmony:** A system monitoring and maintenance tool (currently under development), aiming to automate tasks related to system health, security, and performance.
-*   **PerfectNumberExplorer:** Explores even perfect numbers in an interactive way, allowing users to generate and examine these numbers and their connection to Mersenne primes.
 *   **ProjectAetheris:** Visualises global temperature and CO2 trends, pulling in data from public APIs to provide a clear picture of climate change indicators and their correlation.
 *   **lorenz_chaos.py:** Simulates and visualises the Lorenz Attractor, demonstrating deterministic chaos and the Butterfly Effect, a concept with profound implications for predictability in complex systems.
