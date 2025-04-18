@@ -1,4 +1,6 @@
 # calc123.py
+import ast
+import operator
 
 def add(number1, number2):
     """
@@ -37,8 +39,7 @@ def multiply(number1, number2):
     Returns:
     float: The product of number1 and number2.
     """
-    if number1 == 0 or number2 == 0:
-        return 0
+    # Removed unnecessary check for zero values
     return number1 * number2
 
 def divide(number1, number2):
@@ -109,6 +110,66 @@ def calculate(number1, operator, number2):
     else:
         return "Error: Invalid operator. Please use one of the following operators: +, -, *, /"
 
+def parse_complex_expression(expression):
+    """
+    Parses and evaluates complex mathematical expressions with operator precedence.
+    
+    Parameters:
+    expression (str): The complex mathematical expression (e.g., "10 + 2 * 6")
+    
+    Returns:
+    float or str: The result of the expression or an error message
+    """
+    # Define mapping for operators
+    operations = {
+        ast.Add: operator.add,
+        ast.Sub: operator.sub,
+        ast.Mult: operator.mul,
+        ast.Div: operator.truediv
+    }
+    
+    try:
+        # Parse the expression
+        node = ast.parse(expression, mode='eval').body
+        
+        # Define a recursive function to evaluate the AST
+        def evaluate(node):
+            # If it's a number, return its value
+            if isinstance(node, ast.Num):
+                return node.value
+            
+            # If it's an operation (BinOp), evaluate both sides and apply the operator
+            elif isinstance(node, ast.BinOp):
+                left = evaluate(node.left)
+                right = evaluate(node.right)
+                
+                # Check for division by zero
+                if isinstance(node.op, ast.Div) and right == 0:
+                    raise ZeroDivisionError("Division by zero is not allowed.")
+                
+                return operations[type(node.op)](left, right)
+            
+            # If it's a unary operation (e.g., -5)
+            elif isinstance(node, ast.UnaryOp):
+                operand = evaluate(node.operand)
+                if isinstance(node.op, ast.USub):
+                    return -operand
+                if isinstance(node.op, ast.UAdd):
+                    return operand
+            
+            # For any other type of node, raise an exception
+            else:
+                raise TypeError(f"Unsupported operation: {node}")
+        
+        # Evaluate the expression
+        result = evaluate(node)
+        return result
+    
+    except ZeroDivisionError:
+        return "Error: Division by zero is not allowed."
+    except (SyntaxError, TypeError, ValueError) as e:
+        return f"Error: Invalid expression. {str(e)}"
+
 def perform_calculation(expression):
     """
     Parses the input expression, validates it, and performs the calculation.
@@ -119,6 +180,13 @@ def perform_calculation(expression):
     Returns:
     str: The result of the calculation or an error message.
     """
+    # First, try to parse as a complex expression
+    if any(op in expression for op in "+-*/") and not expression.count(' ') == 2:
+        result = parse_complex_expression(expression)
+        if not isinstance(result, str) or result.startswith("Error"):
+            return f"Result: {result}" if not isinstance(result, str) else result
+    
+    # If complex parsing fails or it's a simple expression, fall back to the original logic
     number1, operator, number2 = parse_input(expression)
     if number1 is None or operator is None or number2 is None:
         return "Error: Invalid input format. Please ensure that both operands are numbers and use the format: [number1] [operator] [number2]"
@@ -139,6 +207,8 @@ def show_help():
     Command-Line Calculator Help:
     - Enter expressions in the format: [number1] [operator] [number2]
       Example: 5 + 3
+    - You can also enter complex expressions with operator precedence:
+      Example: 5 + 3 * 2
     - Supported operators: + (addition), - (subtraction), * (multiplication), / (division)
     - Type 'help' to display this help message.
     - Type 'exit' to exit the calculator.

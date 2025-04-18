@@ -1,0 +1,2 @@
+# No external dependencies required for this project
+# Future dependencies would be listed here with their versions
