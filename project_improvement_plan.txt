@@ -167,3 +167,8 @@ This unified project brings together exploration of both even (Euclid–Euler) p
 ---
 
 
+Create jupyter notebooks for calculator, developers oracle, fiboncaci, number exploreer, omni, project aetheris
+
+Clean up each folder (for each project) of any files that are not needed. Create the README.md file for each invidual project. 
+
+Recommend Folder Groups we can put projects in, e.g Mathematical Python for example an put calculator, fibonacci and number explorer in there. 
