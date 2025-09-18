@@ -1,21 +1,22 @@
-# Fibonacci
+# Fibonacci Sequence Explorer
 
-A Python tool for generating and visualizing Fibonacci sequences with multiple visualization options and mathematical analysis.
+A comprehensive Python tool for exploring Fibonacci sequences with multiple visualization options, robust input validation, and golden ratio analysis.
 
 ## Features
 
-- **Fibonacci Generation**: Generate Fibonacci sequences up to any specified term
-- **ASCII Visualization**: Display sequences using ASCII art bars
+- **Fibonacci Generation**: Generate Fibonacci sequences up to any specified term with edge case handling
+- **ASCII Visualization**: Display sequences using intelligent ASCII art with logarithmic scaling
 - **Graphical Plotting**: Create matplotlib visualizations of the sequence
-- **Golden Ratio Analysis**: Calculate golden ratio approximations from the sequence
-- **Interactive CLI**: User-friendly command-line interface
+- **Golden Ratio Analysis**: Calculate golden ratio approximations with comparison to actual value
+- **Interactive CLI**: User-friendly command-line interface with comprehensive error handling
+- **Input Validation**: Robust validation for all user inputs with helpful error messages
 
 ## Installation
 
 1. Navigate to the Fibonacci directory
 2. Install dependencies:
    ```bash
-   pip install matplotlib
+   pip install -r requirements.txt
    ```
 
 ## Usage
@@ -23,7 +24,7 @@ A Python tool for generating and visualizing Fibonacci sequences with multiple v
 Run the main script from the repository root:
 
 ```bash
-python Fibonacci/src/epicFibonacci.py
+python Mathematics-Computing/Fibonacci/src/epicFibonacci.py
 ```
 
 ### Interactive Options
@@ -35,14 +36,36 @@ The program will prompt you to:
    - **Plot (p)**: Matplotlib graph with markers and lines
    - **Golden Ratio (g)**: Calculate the golden ratio approximation
 
-### Example Session
+### Example Sessions
 
+**Golden Ratio Calculation:**
 ```
-Enter the number of terms in the Fibonacci sequence: 10
-Choose your visualization method: ASCII (a), Plot (p), Golden Ratio (g): p
+Enter the number of terms in the Fibonacci sequence: 15
+
+Generated Fibonacci sequence with 15 terms:
+Sequence: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
+
+Choose your visualization method: ASCII (a), Plot (p), Golden Ratio (g): g
+
+Golden Ratio Approximation: 1.6180257511
+Actual Golden Ratio: 1.6180339887
+Difference: 0.0000082376
 ```
 
-This will generate a matplotlib plot showing the first 10 terms of the Fibonacci sequence.
+**ASCII Visualization:**
+```
+Choose your visualization method: ASCII (a), Plot (p), Golden Ratio (g): a
+
+Fibonacci Sequence ASCII Visualization:
+----------------------------------------
+F( 0) =        0:
+F( 1) =        1: *
+F( 2) =        1: *
+F( 3) =        2: ***
+F( 4) =        3: ****
+F( 5) =        5: *******
+...
+```
 
 ## Mathematical Background
 
@@ -64,11 +87,22 @@ As the sequence progresses, the ratio between consecutive terms approaches the g
 
 - matplotlib (for graphical plotting)
 
+## Error Handling
+
+The program includes comprehensive error handling for:
+- Invalid numeric input
+- Empty or insufficient sequences for golden ratio calculation
+- Matplotlib installation issues
+- Large sequence performance warnings
+- Keyboard interrupts
+
 ## File Structure
 
 ```
 Fibonacci/
 ├── src/
-│   └── epicFibonacci.py
-└── README.md
+│   └── epicFibonacci.py      # Main program with improved features
+├── requirements.txt          # Dependencies
+├── README.md                 # This documentation
+└── Fibonacci.ipynb          # Interactive Jupyter notebook
 ```
