@@ -1,0 +1,8 @@
+# OmniV1 System Monitoring Requirements
+# System monitoring
+psutil>=5.9.0
+
+# HTTP requests for monitoring external services
+requests>=2.28.0
+
+# NOTE: Some functions may require administrative privileges

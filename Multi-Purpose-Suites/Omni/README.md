@@ -35,24 +35,30 @@ An enhanced version with improved features and capabilities.
 
 ## Installation
 
-### General Dependencies
+Each sub-project has its own requirements file for easy dependency management:
+
+### OmniV1 (System Monitoring)
 ```bash
-pip install requests beautifulsoup4 pandas numpy scikit-learn matplotlib seaborn psutil
+cd Multi-Purpose-Suites/Omni/OmniV1
+pip install -r requirements.txt
 ```
 
-### OmniV1 Dependencies
+### OmniMarket Seer (Basic Market Analysis)
 ```bash
-pip install psutil requests
+cd Multi-Purpose-Suites/Omni/"OmniMarket Seer"
+pip install -r requirements.txt
 ```
 
-### OmniMarket Seer Dependencies
+### OmniMarket Seer v2 (Enhanced Market Analysis) - **Recommended**
 ```bash
-pip install yfinance requests beautifulsoup4 pandas numpy scikit-learn matplotlib seaborn
+cd Multi-Purpose-Suites/Omni/"OmniMarket Seer v2"
+pip install -r requirements.txt
 ```
 
-### OmniMarket Seer v2 Dependencies
+### Additional Setup for Market Seer v2
 ```bash
-pip install yfinance requests beautifulsoup4 pandas numpy scikit-learn matplotlib seaborn nltk statsmodels pytrends
+# Download NLTK sentiment analysis data
+python -c "import nltk; nltk.download('vader_lexicon')"
 ```
 
 ## Usage
@@ -100,12 +106,16 @@ sentiment_data = seer.fetch_news_sentiment('AAPL')
 ```
 Omni/
 ├── OmniV1/
-│   └── omni.py              # System monitoring
+│   ├── omni.py              # System monitoring
+│   └── requirements.txt     # Dependencies
 ├── OmniMarket Seer/
-│   └── omni.py              # Basic market analysis
+│   ├── omni.py              # Basic market analysis
+│   └── requirements.txt     # Dependencies
 ├── OmniMarket Seer v2/
-│   └── omni.py              # Enhanced market analysis
-└── README.md
+│   ├── omni.py              # Enhanced market analysis
+│   └── requirements.txt     # Dependencies
+├── Omni.ipynb               # Interactive Jupyter notebook demo
+└── README.md                # This documentation
 ```
 
 ## Data Sources
@@ -121,11 +131,30 @@ Omni/
 - **VADER Sentiment Analysis**: News sentiment scoring
 - **Statistical Models**: Time series analysis and correlation
 
+## Status & Recommendations
+
+### OmniV1 ✅
+**Status**: Functional system monitoring tool
+**Recommendation**: Keep as-is, suitable for basic system monitoring
+
+### OmniMarket Seer ⚠️
+**Status**: Basic implementation with limitations
+**Recommendation**: Consider deprecation in favor of v2, or use for educational purposes only
+
+### OmniMarket Seer v2 🚧
+**Status**: Most advanced but needs improvements
+**Known Issues**:
+- Prediction logic uses basic Random Forest (consider ARIMA/Prophet/LSTM)
+- Web scraping is fragile (replace with news APIs)
+- Placeholder economic indicators (integrate real APIs like FRED)
+
 ## Future Development
 
 Potential areas for expansion:
-- Real-time data streaming
-- Cryptocurrency market analysis
-- Advanced technical indicators
-- Portfolio optimization algorithms
-- Alert and notification systems
+- **Real-time data streaming** with WebSocket connections
+- **Cryptocurrency market analysis** via Binance/Coinbase APIs
+- **Advanced technical indicators** (RSI, MACD, Bollinger Bands)
+- **Portfolio optimization algorithms** using Modern Portfolio Theory
+- **Alert and notification systems** via email/SMS/Discord
+- **Time-series forecasting** with Prophet/ARIMA models
+- **News API integration** replacing web scraping
