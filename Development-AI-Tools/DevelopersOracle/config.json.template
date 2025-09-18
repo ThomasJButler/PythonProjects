@@ -1,0 +1,12 @@
+{
+  "openai_api_key": "YOUR_OPENAI_API_KEY_HERE",
+  "jira_url": "https://your-domain.atlassian.net",
+  "jira_username": "your-jira-email@example.com",
+  "jira_api_token": "YOUR_JIRA_API_TOKEN_HERE",
+  "github_token": "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN_HERE",
+  "gitlab_url": "https://gitlab.com",
+  "gitlab_token": "YOUR_GITLAB_PERSONAL_ACCESS_TOKEN_HERE",
+  "bitbucket_username": "your-bitbucket-username",
+  "bitbucket_app_password": "YOUR_BITBUCKET_APP_PASSWORD_HERE",
+  "local_repo_path": "/path/to/your/local/repository"
+}

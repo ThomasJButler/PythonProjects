@@ -2,3 +2,36 @@
 PythonFootballPredictor/csv
 CommandLineCalculator/__pycache__/calc123.cpython-312.pyc
 .DS_Store
+project_improvement_plan.txt
+
+# Security: Configuration files with credentials
+Development-AI-Tools/DevelopersOracle/config.json
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini

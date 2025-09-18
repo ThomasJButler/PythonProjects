@@ -21,10 +21,10 @@ An AI-powered developer assistant that integrates with multiple platforms to enh
 
 ## Installation
 
-1. Clone the repository
+1. Navigate to the DevelopersOracle directory
 2. Install dependencies:
    ```bash
-   pip install openai numpy GitPython jira3 PyGithub python-gitlab bitbucket-api matplotlib PyQt5 scikit-learn spacy pydriller transformers
+   pip install -r requirements.txt
    ```
 3. Download spaCy model:
    ```bash
@@ -33,27 +33,44 @@ An AI-powered developer assistant that integrates with multiple platforms to enh
 
 ## Configuration
 
-Create a `config.json` file in the project directory:
+⚠️ **IMPORTANT SECURITY NOTE**: The `config.json` file contains sensitive API keys and is included in `.gitignore` to prevent accidental commits.
+
+1. Copy the template configuration:
+   ```bash
+   cp config.json.template config.json
+   ```
+
+2. Edit `config.json` with your actual API keys and configuration:
 
 ```json
 {
-    "openai_api_key": "your_openai_api_key",
+    "openai_api_key": "YOUR_OPENAI_API_KEY_HERE",
     "jira_url": "https://your-domain.atlassian.net",
-    "jira_username": "your_username",
-    "jira_api_token": "your_jira_token",
-    "github_token": "your_github_token",
+    "jira_username": "your-jira-email@example.com",
+    "jira_api_token": "YOUR_JIRA_API_TOKEN_HERE",
+    "github_token": "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN_HERE",
     "gitlab_url": "https://gitlab.com",
-    "gitlab_token": "your_gitlab_token",
-    "bitbucket_username": "your_username",
-    "bitbucket_app_password": "your_app_password",
-    "local_repo_path": "/path/to/your/repo"
+    "gitlab_token": "YOUR_GITLAB_PERSONAL_ACCESS_TOKEN_HERE",
+    "bitbucket_username": "your-bitbucket-username",
+    "bitbucket_app_password": "YOUR_BITBUCKET_APP_PASSWORD_HERE",
+    "local_repo_path": "/path/to/your/local/repository"
 }
 ```
 
+### Getting API Keys
+
+- **OpenAI**: Get your API key from [OpenAI Platform](https://platform.openai.com/api-keys)
+- **GitHub**: Create a Personal Access Token in [GitHub Settings](https://github.com/settings/tokens)
+- **GitLab**: Generate a Personal Access Token in [GitLab Settings](https://gitlab.com/-/profile/personal_access_tokens)
+- **JIRA**: Create an API token in [Atlassian Account Settings](https://id.atlassian.com/manage-profile/security/api-tokens)
+- **Bitbucket**: Create an App Password in [Bitbucket Settings](https://bitbucket.org/account/settings/app-passwords/)
+
 ## Usage
 
+Run from the repository root:
+
 ```bash
-python DevelopersOracle.py
+python Development-AI-Tools/DevelopersOracle/DevelopersOracle.py
 ```
 
 ### Key Methods
@@ -63,22 +80,33 @@ python DevelopersOracle.py
 - `analyze_jira_ticket(ticket_id)`: Analyze JIRA tickets and generate development plans
 - `recommend_reply(message)`: Get AI recommendations for message replies
 
+## File Structure
+
+```
+DevelopersOracle/
+├── DevelopersOracle.py          # Main application
+├── config.json.template         # Configuration template
+├── requirements.txt             # Dependencies
+├── README.md                    # This documentation
+└── DevelopersOracle.ipynb      # Interactive demo notebook
+```
+
 ## Dependencies
 
-- openai
-- numpy
-- GitPython
-- jira3
-- PyGithub
-- python-gitlab
-- bitbucket-api
-- matplotlib
-- PyQt5
-- scikit-learn
-- spacy
-- pydriller
-- transformers
+See `requirements.txt` for complete list:
+- Core: openai, numpy, scikit-learn
+- NLP: spacy, transformers
+- Version Control: GitPython, pydriller
+- Platforms: jira, PyGithub, python-gitlab
+- GUI: PyQt5
+- Visualization: matplotlib, seaborn
 
 ## Status
 
-This project is under active development. Some features may require additional configuration or implementation.
+🚧 **Under Development**: This project contains many placeholder functions that need implementation. The configuration template and documentation are now complete, but core ML and integration features require further development.
+
+## Security
+
+- All sensitive configuration is excluded from version control
+- API keys should never be hardcoded in source files
+- Use environment variables or secure secrets management for production
