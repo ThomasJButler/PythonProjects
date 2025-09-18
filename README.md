@@ -14,47 +14,75 @@ cd PythonProjects
 
 ## 📋 Project Overview
 
+### 🧮 Mathematics & Computing
 | Project | Status | Description | Key Technologies |
 |---------|--------|-------------|------------------|
-| [CommandLineCalculator](./CommandLineCalculator/) | ✅ **Stable** | Terminal-based calculator with expression evaluation | Python AST, Argparse |
-| [CtrlS](./CtrlS/) | ✅ **Stable** | Interactive text-based adventure game | Interactive Fiction |
-| [DevelopersOracle](./DevelopersOracle/) | 🚧 **In Development** | AI-powered developer assistant with platform integrations | OpenAI, JIRA, GitHub, ML |
-| [Fibonacci](./Fibonacci/) | ✅ **Stable** | Fibonacci sequence generation and visualization | Matplotlib, ASCII Art |
-| [NumberExplorer](./NumberExplorer/) | ✅ **Stable** | Mathematical tool for exploring perfect numbers | SymPy, Matplotlib, Pytest |
-| [Omni](./Omni/) | 🔄 **Multi-Version** | System monitoring and market analysis suite | Multiple variants |
-| [ProjectAetheris](./ProjectAetheris/) | ✅ **Stable** | Climate data visualization and chaos theory | Pandas, APIs, Lorenz Attractor |
+| [CommandLineCalculator](./Mathematics-Computing/CommandLineCalculator/) | ✅ **Enhanced** | Terminal calculator with robust input validation & testing | Python AST, Error Handling |
+| [Fibonacci](./Mathematics-Computing/Fibonacci/) | ✅ **Enhanced** | Advanced sequence explorer with golden ratio analysis | Matplotlib, Logarithmic Scaling |
+| [NumberExplorer](./Mathematics-Computing/NumberExplorer/) | ✅ **Stable** | Mathematical tool for exploring perfect numbers | SymPy, Matplotlib, Pytest |
+
+### 📊 Data Visualization & Analytics
+| Project | Status | Description | Key Technologies |
+|---------|--------|-------------|------------------|
+| [ProjectAetheris](./Data-Visualization/ProjectAetheris/) | ✅ **Stable** | Climate data visualization and chaos theory | Pandas, APIs, Lorenz Attractor |
+
+### 🛠️ Development & AI Tools
+| Project | Status | Description | Key Technologies |
+|---------|--------|-------------|------------------|
+| [DevelopersOracle](./Development-AI-Tools/DevelopersOracle/) | 🔧 **Configured** | AI-powered developer assistant with complete setup docs | OpenAI, JIRA, GitHub, ML |
+
+### 🎯 Multi-Purpose Suites
+| Project | Status | Description | Key Technologies |
+|---------|--------|-------------|------------------|
+| [Omni](./Multi-Purpose-Suites/Omni/) | 🔄 **Enhanced** | System monitoring and market analysis with improved docs | Three variants with dependencies |
+
+### 🎮 Interactive & Gaming
+| Project | Status | Description | Key Technologies |
+|---------|--------|-------------|------------------|
+| [CtrlS](./Interactive-Gaming/CtrlS/) | ✅ **Refactored** | Modular text adventure with proper game engine | Chapter Loading, Utilities |
 
 ## 🏗️ Project Structure
 
 ```
 PythonProjects/
-├── CommandLineCalculator/     # Basic terminal calculator
-│   ├── calc123.py
-│   ├── Unittest.py
-│   └── README.md
-├── CtrlS/                     # Text-based adventure game
-│   ├── src/
-│   └── README.md
-├── DevelopersOracle/          # AI developer assistant
-│   ├── DevelopersOracle.py
-│   └── README.md
-├── Fibonacci/                 # Fibonacci sequence tools
-│   ├── src/epicFibonacci.py
-│   └── README.md
-├── NumberExplorer/            # Perfect number exploration
-│   ├── src/
-│   ├── tests/
-│   └── README.md
-├── Omni/                      # Multi-project suite
-│   ├── OmniV1/               # System monitoring
-│   ├── OmniMarket Seer/      # Basic market analysis
-│   ├── OmniMarket Seer v2/   # Enhanced market analysis
-│   └── README.md
-├── ProjectAetheris/           # Climate visualization
-│   ├── aetheris.py
-│   ├── lorenz/               # Chaos theory demonstrations
-│   └── README.md
-└── README.md                  # This file
+├── Mathematics-Computing/          # 🧮 Mathematical & computational projects
+│   ├── CommandLineCalculator/      # Basic terminal calculator
+│   │   ├── calc123.py
+│   │   ├── Unittest.py
+│   │   ├── CommandLineCalculator.ipynb
+│   │   └── README.md
+│   ├── Fibonacci/                  # Fibonacci sequence tools
+│   │   ├── src/epicFibonacci.py
+│   │   ├── Fibonacci.ipynb
+│   │   └── readme.md
+│   └── NumberExplorer/             # Perfect number exploration
+│       ├── src/
+│       ├── tests/
+│       ├── NumberExplorer.ipynb
+│       └── README.md
+├── Data-Visualization/             # 📊 Data analysis & visualization
+│   └── ProjectAetheris/            # Climate visualization
+│       ├── aetheris.py
+│       ├── lorenz/                 # Chaos theory demonstrations
+│       ├── ProjectAetheris.ipynb
+│       └── README.md
+├── Development-AI-Tools/           # 🛠️ AI-powered development tools
+│   └── DevelopersOracle/           # AI developer assistant
+│       ├── DevelopersOracle.py
+│       ├── DevelopersOracle.ipynb
+│       └── README.md
+├── Multi-Purpose-Suites/           # 🎯 Comprehensive multi-tool suites
+│   └── Omni/                       # System monitoring & market analysis
+│       ├── OmniV1/                 # System monitoring
+│       ├── OmniMarket Seer/        # Basic market analysis
+│       ├── OmniMarket Seer v2/     # Enhanced market analysis
+│       ├── Omni.ipynb
+│       └── README.md
+├── Interactive-Gaming/             # 🎮 Games & interactive experiences
+│   └── CtrlS/                      # Text-based adventure game
+│       ├── src/
+│       └── readme.md
+└── README.md                       # This file
 ```
 
 ## 📚 Detailed Project Descriptions
@@ -108,9 +136,9 @@ Each project is designed to be run from the repository root:
 
 ```bash
 # Examples
-python CommandLineCalculator/calc123.py
-python Fibonacci/src/epicFibonacci.py
-python ProjectAetheris/aetheris.py
+python Mathematics-Computing/CommandLineCalculator/calc123.py
+python Mathematics-Computing/Fibonacci/src/epicFibonacci.py
+python Data-Visualization/ProjectAetheris/aetheris.py
 ```
 
 ## 🧪 Testing
@@ -118,11 +146,11 @@ python ProjectAetheris/aetheris.py
 Projects with test suites:
 ```bash
 # CommandLineCalculator
-python CommandLineCalculator/Unittest.py
+python Mathematics-Computing/CommandLineCalculator/Unittest.py
 
 # NumberExplorer (requires conda environment)
 conda activate numberexplorer
-cd NumberExplorer
+cd Mathematics-Computing/NumberExplorer
 pytest
 ```
 
