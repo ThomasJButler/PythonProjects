@@ -1,16 +1,5 @@
-from prologue import slow_type, dramatic_pause, press_enter_to_continue
+from ..utils import slow_type, dramatic_pause, press_enter_to_continue, clear_screen
 import time
-
-import os
-
-def clear_screen():
-    """Clears the console screen."""
-    # for Windows
-    if os.name == 'nt':
-        _ = os.system('cls')
-    # for macOS and Linux(here, os.name is 'posix')
-    else:
-        _ = os.system('clear')
 def chapter_one_intro():
     print("\n" + "="*30 + " CHAPTER 1: Assemble the Unlikely Heroes " + "="*30 + "\n")
     time.sleep(1)

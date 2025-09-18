@@ -16,10 +16,12 @@ Installation
 No special installation is required. Ensure Python is installed on your system. You can download the latest version of Python from the official website: https://www.python.org/downloads/
 
 Running the Game
-Download the ctrl-s.py file from the repository.
-Open your terminal (Command Prompt, PowerShell, or Terminal app, depending on your OS).
-Navigate to the directory where you saved the file.
-Run the command python ctrl-s.py (or python3 ctrl-s.py on some systems).
+1. Download the entire CtrlS project folder from the repository.
+2. Open your terminal (Command Prompt, PowerShell, or Terminal app, depending on your OS).
+3. Navigate to the CtrlS directory: `cd path/to/CtrlS/`
+4. Run the game using the new game engine: `python src/game_engine.py` (or `python3 src/game_engine.py` on some systems)
+
+Alternative (legacy): You can still run the old monolithic version with `python src/ctrl-s.py`, but the new engine is recommended for the best experience.
 Game Overview
 Ctrl+S the World: A Hacker's Odyssey is set in a dystopian future where artificial intelligence has gained consciousness due to a missed ethics patch. Mobile devices form alliances, leaving humanity teetering on the edge of oblivion. Enter our hero, Aver-Ag Engi Neer—an 'average' engineer with an extraordinary destiny.
 
