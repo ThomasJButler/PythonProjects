@@ -2,6 +2,8 @@
 
 Collection of Python hobby projects including mathematical tools, climate visualisation, AI development assistants, and interactive games.
 
+<p align="center"> <img src="Data-Visualization/ProjectAetheris/images/LorenzAttractor.png" alt="Lorenz attractor" width="600"/> </p>
+
 ## Quick Start
 
 ```bash
