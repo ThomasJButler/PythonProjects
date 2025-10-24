@@ -1,7 +1,13 @@
+"""
+@author Tom Butler
+@date 2025-10-24
+@description Unit tests for command-line calculator functions covering arithmetic operations and expression parsing.
+"""
 import unittest
 from calc123 import add, subtract, multiply, divide, calculate, parse_input, validate_operator, parse_complex_expression
 
 class TestCalculatorFunctions(unittest.TestCase):
+    """Tests for basic calculator operations and expression parsing."""
     def test_add(self):
         self.assertEqual(add(2, 3), 5)
         self.assertEqual(add(-1, 5), 4)
@@ -34,8 +40,8 @@ class TestCalculatorFunctions(unittest.TestCase):
     def test_parse_input(self):
         self.assertEqual(parse_input("5 + 3"), (5, '+', 3))
         self.assertEqual(parse_input("-1 * 5"), (-1, '*', 5))
-        self.assertEqual(parse_input("10/2"), (None, None, None))  # This format isn't supported by parse_input
-        # Test invalid input
+        # parse_input requires spaces between operands and operator
+        self.assertEqual(parse_input("10/2"), (None, None, None))
         self.assertEqual(parse_input("abc"), (None, None, None))
         
     def test_calculate(self):
